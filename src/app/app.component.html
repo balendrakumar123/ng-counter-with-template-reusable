@@ -1,0 +1,37 @@
+<app-counter></app-counter>
+<hr>
+
+<app-custom-counter title="Fancy counter">
+	<ng-template appCounterValue let-value>
+		<span class="mr-2">Current value: {{value}}</span>
+		<i class="fa fa-arrow-left"></i>
+	</ng-template>
+
+	<ng-template appCounterIncBtn let-increment>
+		<button class="btn btn-success" (click)="increment()">
+      inc <i class="fa fa-arrow-up"></i>
+    </button>
+	</ng-template>
+
+	<ng-template appCounterDecBtn let-decrement>
+		<button class="btn btn-danger" (click)="decrement()">
+      dec <i class="fa fa-arrow-down"></i>
+    </button>
+	</ng-template>
+</app-custom-counter>
+<hr>
+
+<app-custom-counter title="Fancy counter with * syntax">
+	<ng-container *appCounterValue="let value">
+		<span class="mr-2">Current value: {{value}}</span>
+		<i class="fa fa-arrow-left"></i>
+	</ng-container>
+
+	<button class="btn btn-success" *appCounterIncBtn="let increment" (click)="increment()">
+    inc <i class="fa fa-arrow-up"></i>
+  </button>
+
+	<button class="btn btn-danger" *appCounterDecBtn="let decrement" (click)="decrement()">
+    dec <i class="fa fa-arrow-down"></i>
+  </button>
+</app-custom-counter>

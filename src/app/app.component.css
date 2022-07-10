@@ -1,0 +1,9 @@
+p {
+  font-family: Lato;
+}
+
+.counter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
